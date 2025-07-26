@@ -143,3 +143,39 @@
 			});
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal       = document.getElementById('paper-modal');
+  const overlay     = modal.querySelector('.modal-overlay');
+  const closeBtn    = document.getElementById('modal-close');
+  const carousel    = modal.querySelector('.paper-carousel');
+  const openBtn     = document.getElementById('open-papers');
+
+  // Open/close handlers
+  openBtn.addEventListener('click', e => {
+    e.preventDefault();
+    modal.classList.remove('hidden');
+  });
+  [closeBtn, overlay].forEach(el =>
+    el.addEventListener('click', () => modal.classList.add('hidden'))
+  );
+
+  // Load papers.json and populate carousel
+  fetch('assets/data/papers.json')
+  .then(res => res.json())
+  .then(papers => {
+    papers.forEach(p => {
+	  const imgPath = `assets/${p.image}`;
+      const tile = document.createElement('div');
+      tile.className = 'paper-tile';
+      tile.innerHTML = `
+        <img src="${imgPath}" alt="${p.title}">
+        <div class="title">
+          <a href="${p.url}" target="_blank">${p.title}</a>
+        </div>
+      `;
+      carousel.appendChild(tile);
+    });
+  })
+  .catch(err => console.error('Error loading papers:', err));
+});
