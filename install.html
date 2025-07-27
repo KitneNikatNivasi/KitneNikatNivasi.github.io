@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install_instructions</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+     
+<ul>
+<li>
+<ul>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h2 id="dependencies">Dependencies</h2>
+<p><code>kNNpy</code> makes use of the following packages:</p>
+<ul>
+<li><code>numpy</code></li>
+<li><code>scipy</code></li>
+<li><code>pyfftw</code></li>
+<li><code>pylians</code></li>
+<li><code>healpy</code> (optional)</li>
+<li><code>scikit-learn</code> (optional)</li>
+<li><code>matplotlib</code> (optional)</li>
+</ul>
+<p>These need to be installed before using the package, preferably in a fresh virtual environment (see instructions below). <code>healpy</code> and <code>scikit-learn</code> are optional, and can be skipped if you do not intend to use the <code>kNNpy.kNN_2D_Ang</code> module. Similarly, <code>matplotlib</code> is also optional if you do not intend to use the <code>kNNpy.Auxiliary.PeakStatistics</code> module.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="linuxmac">Linux/Mac</h3>
+<p>Change to your preferred installation directory, create a python virtual environment and install the pre-requisites. Avoid creating the virtual environment using anaconda or miniconda as it has been known to cause conflict with the installation of one of the dependencies, <code>Pylians</code>. <strong>Warning</strong>: the name of the virtual environment must <strong>NOT</strong> be ‘kNNpy’ as that is the default name for the code repository.</p>
+<pre class=" language-bash"><code class="prism  language-bash">$ <span class="token function">cd</span> /path/to/installation/directory
+$ python3 -m venv kNNpy_env
+$ <span class="token function">source</span> kNNpy_env/bin/activate
+$ pip <span class="token function">install</span> numpy scipy pyfftw Pylians healpy scikit-learn matplotlib
+</code></pre>
+<p>Sometimes, the <code>Pylians</code> installation fails using pip (especially for Mac). If you face this issue, you might need to install <code>Pylians</code> separately from the other dependencies in the development mode (refer to their <a href="https://pylians3.readthedocs.io/en/master/installation.html">install instructions</a>).</p>
+<p>If you do not wish to install the optional dependencies, replace the last command with</p>
+<pre class=" language-bash"><code class="prism  language-bash">$ pip <span class="token function">install</span> numpy scipy pyfftw Pylians
+</code></pre>
+<p>Clone the kNN repository</p>
+<pre class=" language-bash"><code class="prism  language-bash">$ <span class="token function">git</span> clone https://github.com/vikhyat108/kNNpy.git
+</code></pre>
+<p>Export the path to the installed repository to your python path, either temporarily (ie., for the current session) by running the following command:</p>
+<pre class=" language-bash"><code class="prism  language-bash">$ <span class="token function">export</span> PYTHONPATH<span class="token operator">=</span><span class="token string">"<span class="token variable">${PYTHONPATH}</span>:/path/to/installation/directory/kNNpy/"</span>
+</code></pre>
+<p>or permanently by adding the above command to your <code>~/.bashrc</code> file.</p>
+<h3 id="windows">Windows</h3>
+<p>Unfortunately, <code>kNNpy</code> is currently not available for Windows, but might be in a later release.</p>
+<h2 id="usage">Usage</h2>
+<p>Change to working directory (may be different than the installation directory)</p>
+<pre class=" language-bash"><code class="prism  language-bash">$ <span class="token function">cd</span> /my/working/directory
+</code></pre>
+<p>Activate the virtual environment (remember to specify the full path to the virtual environment)</p>
+<pre class=" language-bash"><code class="prism  language-bash">$ <span class="token function">source</span> /path/to/virtual/environment/bin/activate
+</code></pre>
+<p>Add the path for the kNNpy code to your python path, if not done already (see installation instructions)</p>
+<p>You can now import kNNpy as a package in python!</p>
+
+    </div>
+  </div>
+</body>
+
+</html>
