@@ -2,47 +2,79 @@
   {
     "title": "Nearest neighbour distributions: New statistical measures for cosmological clustering ",
     "url": "https://doi.org/10.1093/mnras/staa3604",
-    "image": "images/papers/knn.png"
+    "image": "images/papers/knn.png",
+    "description":"Arka Banerjee, Tom Abel
+                  Monthly Notices of the Royal Astronomical Society, 2021"
   },
   {
     "title": "Cosmological cross-correlations and nearest neighbour distributions",
     "url": "https://doi.org/10.1093/mnras/stab961",
-    "image": "images/papers/cross_correlations.png"
+    "image": "images/papers/cross_correlations.png",
+    "description":"Arka Banerjee, Tom Abel
+                  Monthly Notices of the Royal Astronomical Society, 2021"
   },
   {
     "title": "Tracer-field cross-correlations with k-nearest neighbour distributions ",
     "url": "https://doi.org/10.1093/mnras/stac3813",
-    "image": "images/papers/tracer_field.png"
+    "image": "images/papers/tracer_field.png",
+    "description":"Arka Banerjee, Tom Abel
+                  Monthly Notices of the Royal Astronomical Society, 2023"
   },
   {
     "title": "Modelling nearest neighbour distributions of biased tracers using hybrid effective field theory",
     "url": "https://doi.org/10.1093/mnras/stac193",
-    "image": "images/papers/hybrid_eft.png"
+    "image": "images/papers/hybrid_eft.png",
+    "description":"Arka Banerjee, Nickolas Kokron, Tom Abel
+                  Monthly Notices of the Royal Astronomical Society, 2022"
+  },
+  {
+    "title": "Detection of spatial clustering in the 1000 richest SDSS DR8 redMaPPer clusters with nearest neighbor distributions",
+    "url": "https://doi.org/10.1093/mnras/stac1551",
+    "image": "images/papers/spatial_clustering.png",
+    "description":"Arka Banerjee, Tom Abel
+                  Monthly Notices of the Royal Astronomical Society, 2022"
+  },
+  {
+    "title": "k-nearest neighbour distributions in the presence of non-Gaussianity",
+    "url": "https://doi.org/10.1093/mnras/stac193",
+    "image": "images/papers/non_gaussianity.png",
+    "description":"Arka Banerjee, Tom Abel
+                  Monthly Notices of the Royal Astronomical Society, 2022"
   },
   {
     "title": "Spatial clustering of gravitational wave sources with k-nearest neighbour distributions ",
     "url": "https://doi.org/10.1093/mnras/stae1424",
-    "image": "images/papers/gw_x_galaxy.png"
+    "image": "images/papers/gw_x_galaxy.png",
+    "description":"Kaustubh Rajesh Gupta, Arka Banerjee
+                  Monthly Notices of the Royal Astronomical Society, 2024"
   },
   {
     "title": "Boosting H i-galaxy cross-clustering signal through higher order cross-correlations",
     "url": "https://doi.org/10.1093/mnras/staf433",
-    "image": "images/papers/hi_x_galaxy.png"
+    "image": "images/papers/hi_x_galaxy.png",
+    "description":"Eishica Chand, Arka Banerjee, Simon Foreman, Francisco Villaescusa-Navarro
+                  Monthly Notices of the Royal Astronomical Society, 2025"
   },
   {
     "title": "Geometric Interpretations of the k-Nearest Neighbour Distributions",
     "url": "https://doi.org/10.48550/arXiv.2502.07713",
-    "image": "images/papers/geometric_interpretations.png"
+    "image": "images/papers/geometric_interpretations.png",
+    "description":"Sihan Yuan, Alvaro Zamora, Tom Abel
+                  Monthly Notices of the Royal Astronomical Society, 2023"
   },
   {
     "title": "2D k-th nearest neighbour statistics: a highly informative probe of galaxy clustering",
     "url": "https://doi.org/10.1093/mnras/stad1275",
-    "image": "images/papers/knn_2d_distributions.png"
+    "image": "images/papers/knn_2d_distributions.png",
+    "description":"Zhuoyang Zhou (周卓扬), Jessi Cisewski-Kehe, Ke Fang, and Arka Banerjee
+                  The Astrophysical Journal, 2025"
   },
   {
     "title": "High-energy Neutrino Source Cross-correlations with Nearest-neighbor Distributions",
     "url": "https://iopscience.iop.org/article/10.3847/1538-4357/ad924c",
-    "image": "images/papers/high_energy_neutrinos.png"
+    "image": "images/papers/high_energy_neutrinos.png",
+    "description":"Kwanit Gangopadhyay, Arka Banerjee, Tom Abel
+                  arXiv:2502.07713, 2025"
   }
 ]
 

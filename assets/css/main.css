@@ -2959,6 +2959,13 @@ input, select, textarea {
 	  flex: 1;
 	  margin: 0;
 	}
+	.paper-tile .description {
+  	font-size: 0.9rem;
+  	font-style: italic;
+  	color: #666;
+  	margin-top: 4px;
+	}
+
 
 
 /* Button */
@@ -3511,9 +3518,19 @@ input, select, textarea {
 			opacity: 1;
 			margin: 0 0 1.3em 0;
 		}
-
+			#banner .logo img {
+				border-radius: 0;
+				border: solid 2px rgba(255, 255, 255, 0.125);
+				cursor: default;
+				display: block;
+				font-size: 2em;
+				height: auto;
+				line-height: 2.25em;
+				text-align: center;
+				width: 3.25em;
+			}
 			#banner .logo .icon {
-				border-radius: 100%;
+				border-radius: 0;
 				border: solid 2px rgba(255, 255, 255, 0.125);
 				cursor: default;
 				display: inline-block;

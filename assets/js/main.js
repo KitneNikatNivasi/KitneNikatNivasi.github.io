@@ -156,26 +156,29 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     modal.classList.remove('hidden');
   });
+
   [closeBtn, overlay].forEach(el =>
     el.addEventListener('click', () => modal.classList.add('hidden'))
   );
 
   // Load papers.json and populate carousel
   fetch('assets/data/papers.json')
-  .then(res => res.json())
-  .then(papers => {
-    papers.forEach(p => {
-	  const imgPath = `assets/${p.image}`;
-      const tile = document.createElement('div');
-      tile.className = 'paper-tile';
-      tile.innerHTML = `
-        <img src="${imgPath}" alt="${p.title}">
-        <div class="title">
-          <a href="${p.url}" target="_blank">${p.title}</a>
-        </div>
-      `;
-      carousel.appendChild(tile);
-    });
-  })
-  .catch(err => console.error('Error loading papers:', err));
+    .then(res => res.json())
+    .then(papers => {
+      papers.forEach(p => {
+        const imgPath = `assets/${p.image}`;
+        const tile = document.createElement('div');
+        tile.className = 'paper-tile';
+        tile.innerHTML = `
+          <img src="${imgPath}" alt="${p.title}">
+          <div class="title">
+            <a href="${p.url}" target="_blank">${p.title}</a>
+          </div>
+          ${p.description ? `<div class="description">${p.description}</div>` : ''}
+        `;
+        carousel.appendChild(tile);
+      });
+    })
+    .catch(err => console.error('Error loading papers:', err));
 });
+
