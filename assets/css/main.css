@@ -2965,6 +2965,27 @@ input, select, textarea {
   	color: #666;
   	margin-top: 4px;
 	}
+	/* 1) Stack title & desc vertically */
+	.paper-tile {
+	  display: flex;
+	  flex-direction: column !important;  /* was row */
+	  align-items: flex-start;            /* left‑align everything */
+	}
+
+	/* 2) Make the description text white (instead of gray) */
+	.paper-tile .description {
+	  color: #fff !important;
+	  margin-top: 0.5rem;    /* space from title */
+	  font-style: normal;    /* optional: drop the italic if you like */
+	}
+
+	/* 3) Ensure the title link is white too */
+	.paper-tile .title a {
+	  color: #fff !important;
+	  margin-bottom: 0.25rem;
+	}
+
+	/* 4) If you want the image full‑width above the text, move it */
 
 
 
