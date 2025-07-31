@@ -35,11 +35,18 @@
 <li><code>pylians</code></li>
 <li><code>healpy</code> <em>(optional)</em></li>
 <li><code>scikit-learn</code> <em>(optional)</em></li>
+<li><code>astropy-healpix</code> <em>(optional)</em></li>
 <li><code>matplotlib</code> <em>(optional)</em></li>
 </ul>
-<p>These need to be installed before using the package, preferably in a fresh virtual environment (see instructions below).<br>
-<code>scikit-learn</code> is optional, and can be skipped if you do not intend to use the <code>kNNpy.kNN_2D_Ang</code> module.<br>
-Similarly, <code>healpy</code> and <code>matplotlib</code> are optional if you do not intend to use the <code>kNNpy.kNN_2D_Ang</code>, <code>kNNpy.Auxiliary.TPCF.TracerField2D</code> and <code>kNNpy.Auxiliary.PeakStatistics</code> modules.</p>
+<p>These need to be installed before using the package, preferably in a fresh virtual environment (see instructions below).</p>
+<blockquote>
+<p>💡 <strong>Optional dependencies</strong></p>
+<ul>
+<li><code>scikit-learn</code> can be skipped if you do not intend to use the <code>kNNpy.kNN_2D_Ang</code> module</li>
+<li><code>astropy-healpix</code> can be skipped if you do not intend to use the <code>Auxiliary.TPCF.TracerField2D</code> module.</li>
+<li><code>healpy</code> and <code>matplotlib</code> can be skipped if you do not intend to use the <code>kNNpy.kNN_2D_Ang</code>, <code>kNNpy.Auxiliary.TPCF.TracerField2D</code> and <code>kNNpy.Auxiliary.PeakStatistics</code> modules.</li>
+</ul>
+</blockquote>
 <hr>
 <h2 id="🛠-installation">🛠 Installation</h2>
 <h3 id="🐧-linuxmacos">🐧 Linux/macOS</h3>
@@ -48,7 +55,8 @@ Similarly, <code>healpy</code> and <code>matplotlib</code> are optional if you d
 <pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> /path/to/installation/directory
 python3 -m venv kNNpy_env
 <span class="token function">source</span> kNNpy_env/bin/activate
-pip <span class="token function">install</span> numpy scipy pyfftw Pylians healpy scikit-learn matplotlib
+pip <span class="token function">install</span> numpy scipy pyfftw Pylians healpy scikit-learn astropy-healpix matplotlib
+
 </code></pre>
 <blockquote>
 <p>💡 <strong>Note on Pylians installation</strong><br>
