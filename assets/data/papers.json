@@ -45,19 +45,19 @@
     "title": "Geometric Interpretations of the k-Nearest Neighbour Distributions",
     "url": "https://doi.org/10.48550/arXiv.2502.07713",
     "image": "images/papers/geometric_interpretations.png",
-    "description":"Sihan Yuan, Alvaro Zamora, Tom Abel\nMonthly Notices of the Royal Astronomical Society, 2023"
+    "description":" Kwanit Gangopadhyay, Arka Banerjee, Tom Abel\narXiv:2502.07713, 2025"
   },
   {
     "title": "2D k-th nearest neighbour statistics: a highly informative probe of galaxy clustering",
     "url": "https://doi.org/10.1093/mnras/stad1275",
     "image": "images/papers/knn_2d_distributions.png",
-    "description":"Zhuoyang Zhou (周卓扬), Jessi Cisewski-Kehe, Ke Fang, and Arka Banerjee\nThe Astrophysical Journal, 2025"
+    "description":"Sihan Yuan, Alvaro Zamora, Tom Abel\nMonthly Notices of the Royal Astronomical Society, 2023"
   },
   {
     "title": "High-energy Neutrino Source Cross-correlations with Nearest-neighbor Distributions",
     "url": "https://iopscience.iop.org/article/10.3847/1538-4357/ad924c",
     "image": "images/papers/high_energy_neutrinos.png",
-    "description":"Kwanit Gangopadhyay, Arka Banerjee, Tom Abel\narXiv:2502.07713, 2025"
+    "description":"Zhuoyang Zhou (周卓扬), Jessi Cisewski-Kehe, Ke Fang, and Arka Banerjee\nThe Astrophysical Journal, 2025"
   }
 ]
 
