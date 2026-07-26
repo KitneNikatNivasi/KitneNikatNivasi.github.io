@@ -29,85 +29,103 @@
       <h2 id="📚-dependencies">📚 Dependencies</h2>
 <p><code>kNNpy</code> makes use of the following packages:</p>
 <ul>
+<li><code>astropy</code></li>
+<li><code>astropy-healpix</code></li>
+<li><code>astrotools</code></li>
+<li><code>getdist</code></li>
+<li><code>healpy</code></li>
+<li><code>jupyter</code></li>
+<li><code>matplotlib</code></li>
+<li><code>numba</code></li>
 <li><code>numpy</code></li>
-<li><code>scipy</code></li>
+<li><code>pandas</code></li>
 <li><code>pyfftw</code></li>
-<li><code>pylians</code></li>
-<li><code>healpy</code> <em>(optional)</em></li>
-<li><code>scikit-learn</code> <em>(optional)</em></li>
-<li><code>astropy-healpix</code> <em>(optional)</em></li>
-<li><code>matplotlib</code> <em>(optional)</em></li>
+<li><code>Pylians</code></li>
+<li><code>pytest</code></li>
+<li><code>scikit-learn</code></li>
+<li><code>scipy</code></li>
 </ul>
 <p>These need to be installed before using the package, preferably in a fresh virtual environment (see instructions below).</p>
-<blockquote>
-<p>💡 <strong>Optional dependencies</strong></p>
-<ul>
-<li><code>scikit-learn</code> can be skipped if you do not intend to use the <code>kNNpy.kNN_2D_Ang</code> module</li>
-<li><code>astropy-healpix</code> can be skipped if you do not intend to use the <code>Auxiliary.TPCF.TracerField2D</code> module.</li>
-<li><code>healpy</code> and <code>matplotlib</code> can be skipped if you do not intend to use the <code>kNNpy.kNN_2D_Ang</code>, <code>kNNpy.Auxiliary.TPCF.TracerField2D</code> and <code>kNNpy.Auxiliary.PeakStatistics</code> modules.</li>
-</ul>
-</blockquote>
 <hr>
 <h2 id="🛠-installation">🛠 Installation</h2>
-<h3 id="🐧-linuxmacos">🐧 Linux/macOS</h3>
-<p>Change to your preferred installation directory, create a Python virtual environment and install the dependencies.</p>
-<p><strong>⚠️ Warning</strong>: Do <strong>not</strong> use <code>anaconda</code> or <code>miniconda</code> for the virtual environment as it may cause conflicts with <code>Pylians</code>. Also, do <strong>not</strong> name the virtual environment <code>kNNpy</code> to avoid namespace issues.</p>
-<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> /path/to/installation/directory
-python3 -m venv kNNpy_env
-<span class="token function">source</span> kNNpy_env/bin/activate
-pip <span class="token function">install</span> numpy scipy pyfftw Pylians healpy scikit-learn astropy-healpix matplotlib
-
-</code></pre>
-<blockquote>
-<p>💡 <strong>Note on Pylians installation</strong><br>
-Sometimes, the Pylians installation fails when using <code>pip</code> (especially on macOS). If that happens:</p>
-<ul>
-<li>First install all other dependencies (without Pylians)</li>
-<li>Then install Pylians in development mode following their official instructions:<br>
-👉 <a href="https://pylians3.readthedocs.io/en/master/installation.html#">Pylians_documentation</a></li>
-</ul>
-</blockquote>
-<p>If you <strong>do not</strong> want the optional dependencies, replace the last line above by:</p>
-<pre class=" language-bash"><code class="prism  language-bash">pip <span class="token function">install</span> numpy scipy pyfftw Pylians
-</code></pre>
+<h3 id="🖥️-macos">🖥️ macOS</h3>
+<p>Change to your preferred installation directory.</p>
 <h3 id="📥-clone-this-repository">📥 Clone this repository</h3>
-<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> clone https://github.com/vikhyat108/kNNpy.git
+<pre class=" language-bash"><code class="prism  language-bash">git clone https://github.com/vikhyat108/kNNpy.git
+cd kNNpy
 </code></pre>
-<h3 id="🧭-set-your-pythonpath">🧭 Set your <code>PYTHONPATH</code></h3>
-<p>Export the path to the installed repository to your Python path:</p>
-<ul>
-<li><strong>Temporarily</strong> (for current shell session):</li>
-</ul>
-<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">export</span> PYTHONPATH<span class="token operator">=</span><span class="token string">"<span class="token variable">${PYTHONPATH}</span>:/path/to/installation/directory/kNNpy/"</span>
+<h3 id="🏃‍♂️-run-these-commands">🏃‍♂️ Run these commands</h3>
+<pre class=" language-bash"><code class="prism  language-bash">python3 -m venv Setup/kNNpy_env
+source Setup/kNNpy_env/bin/activate
+/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+brew install llvm
+export LDFLAGS=&quot;-L/opt/homebrew/opt/llvm/lib&quot;
+export CPPFLAGS=&quot;-I/opt/homebrew/opt/llvm/include&quot;
+brew install libomp
+export LDFLAGS=&quot;-L/opt/homebrew/opt/libomp/lib&quot;
+export CPPFLAGS=&quot;-I/opt/homebrew/opt/libomp/include&quot;
+brew install hdf5
+pip install --upgrade pip
+pip install &quot;setuptools&lt;82&quot;
+pip install -r Setup/requirements_no_Pylians.txt
+git clone https://github.com/franciscovillaescusa/Pylians3.git
+cd Pylians3
+sed -i '' 's/-fopenmp//g' setup.py
+python3 -m pip install .
 </code></pre>
-<ul>
-<li><strong>Permanently</strong> (recommended): add the line above to your <code>~/.bashrc</code> or <code>~/.zshrc</code>.</li>
-</ul>
-<h3 id="✅-test-the-installation">✅ Test the installation</h3>
-<p>To check if <code>kNNpy</code> is successfully installed and ready to use, run the following command:</p>
-<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> /path/to/installation/directory/
-<span class="token function">cd</span> kNNpy/Tests/
-python3 import_all_modules.py
+<p><strong>⚠️ Warning</strong>: these installation steps have only been tested on macOS-14, 15 and 26 using python 3.11, 3.12, 3.13 and 3.14. Kindly raise an issue if you run into problems installing on other versions.</p>
+<hr>
+<h3 id="🐧-linux">🐧 Linux</h3>
+<p>Change to your preferred installation directory.</p>
+<h3 id="📥-clone-this-repository-1">📥 Clone this repository</h3>
+<pre class=" language-bash"><code class="prism  language-bash">git clone https://github.com/vikhyat108/kNNpy.git
+cd kNNpy
 </code></pre>
-<p>If you did not install the optional dependencies, replace the last line above by:</p>
-<pre class=" language-bash"><code class="prism  language-bash">python3 import_required_modules.py
+<h3 id="🏃‍♂️-run-these-commands-1">🏃‍♂️ Run these commands</h3>
+<pre class=" language-bash"><code class="prism  language-bash">sudo apt-get update
+sudo apt-get install -y build-essential libomp-dev python3-dev
+python3 -m venv Setup/kNNpy_env
+source Setup/kNNpy_env/bin/activate
+pip install --upgrade pip
+pip install &quot;setuptools&lt;82&quot;
+pip install -r Setup/requirements_no_Pylians.txt
+git clone https://github.com/franciscovillaescusa/Pylians3.git
+cd Pylians3
+python -m pip install .
 </code></pre>
-<p>If no error message is returned, the installation is succesful.</p>
+<p><strong>⚠️ Warning</strong>: these installation steps have only been tested on ubuntu-22.04, 24.04 and 26.04 LTS using python 3.11, 3.12, 3.13 and 3.14. Kindly raise an issue if you run into problems installing on other versions.</p>
 <hr>
 <h3 id="🪟-windows">🪟 Windows</h3>
 <p>Unfortunately, <code>kNNpy</code> is currently not supported on Windows. Future support may be added in later releases.</p>
 <hr>
+<h2 id="🧭-set-your-pythonpath">🧭 Set your <code>PYTHONPATH</code></h2>
+<p>Export the path to the installed repository to your Python path:</p>
+<ul>
+<li><strong>Temporarily</strong> (for current shell session):</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash">export PYTHONPATH="${PYTHONPATH}:/path/to/installation/directory/kNNpy/"
+</code></pre>
+<ul>
+<li><strong>Permanently</strong> (recommended): add the line above to your <code>~/.bashrc</code> or <code>~/.zshrc</code>.</li>
+</ul>
+<h2 id="✅-test-the-installation">✅ Test the installation</h2>
+<p>To check if <code>kNNpy</code> is successfully installed and ready to use, run the following command:</p>
+<pre class=" language-bash"><code class="prism  language-bash">cd /path/to/installation/directory/
+cd kNNpy/Tests/
+python3 import_all_modules.py
+</code></pre>
+<p>If no error message is returned, the installation is succesful.</p>
+<hr>
 <h2 id="▶️-usage">▶️ Usage</h2>
 <p>Change to your working directory:</p>
-<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> /my/working/directory
+<pre class=" language-bash"><code class="prism  language-bash">cd /my/working/directory
 </code></pre>
 <p>Activate your virtual environment:</p>
-<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">source</span> /path/to/virtual/environment/bin/activate
+<pre class=" language-bash"><code class="prism  language-bash">source /path/to/installation/directory/kNNpy/Setup/kNNpy_env/bin/activate
 </code></pre>
 <p>Set the <code>PYTHONPATH</code> (if not already done) and in your Python scripts or notebooks, you can now:</p>
-<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> kNNpy
+<pre class=" language-python"><code class="prism  language-python">import kNNpy
 </code></pre>
-<p>💡 <strong>Note</strong>: If you skipped the optional dependencies, use the <code>from kNNpy import &lt;MODULE NAME&gt;</code> idiom instead of <code>import kNNpy</code>.</p>
 
     </div>
   </div>
